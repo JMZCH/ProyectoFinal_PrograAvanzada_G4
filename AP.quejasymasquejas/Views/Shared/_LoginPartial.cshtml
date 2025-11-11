@@ -1,0 +1,59 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        @* Generar alias automáticamente desde el email, solo letras *@
+        var userName = User.Identity?.Name;
+        var alias = "Usuario";
+
+        if (!string.IsNullOrEmpty(userName))
+        {
+            if (userName.Contains('@'))
+            {
+                // Tomar la parte antes del @
+                var emailPart = userName.Split('@')[0];
+
+                // Filtrar solo letras
+                var onlyLetters = new string(emailPart.Where(char.IsLetter).ToArray());
+
+                // Si hay letras, usarlas; si no, usar "Usuario"
+                alias = !string.IsNullOrEmpty(onlyLetters) ? onlyLetters : "Usuario";
+
+                // Capitalizar primera letra
+                if (alias.Length > 0)
+                {
+                    alias = char.ToUpper(alias[0]) + alias.Substring(1).ToLower();
+                }
+            }
+            else
+            {
+                // Si no es email, filtrar solo letras del nombre
+                var onlyLetters = new string(userName.Where(char.IsLetter).ToArray());
+                alias = !string.IsNullOrEmpty(onlyLetters) ? onlyLetters : "Usuario";
+            }
+        }
+
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                ¡Hola @alias Bienvenido! 👋
+            </a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
+                <button type="submit" class="nav-link btn btn-link text-light">🚪 Salir</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">📝 Registro</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">🔐 Iniciar Sesión</a>
+        </li>
+    }
+</ul>

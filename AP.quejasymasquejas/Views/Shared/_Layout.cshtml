@@ -1,0 +1,139 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - 😅 Quejas y más Quejas 💬</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AP.quejasymasquejas.styles.css" asp-append-version="true" />
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Función para cambiar todos los textos
+        function changeLoginTexts() {
+            // Cambiar "Log in" por "Iniciar Sesión" en botones
+            document.querySelectorAll('button').forEach(button => {
+                if (button.textContent.trim() === 'Log in') {
+                    button.textContent = 'Iniciar Sesión';
+                }
+            });
+            
+            // Cambiar "Use a local account to log in."
+            document.querySelectorAll('h2').forEach(h2 => {
+                if (h2.textContent.includes('Use a local account to log in')) {
+                    h2.textContent = 'Usa tu cuenta para iniciar sesión';
+                }
+            });
+            
+            // Cambiar "Email" por "Correo electrónico"
+            document.querySelectorAll('label').forEach(label => {
+                if (label.textContent.trim() === 'Email') {
+                    label.textContent = 'Correo electrónico';
+                }
+                if (label.textContent.trim() === 'Password') {
+                    label.textContent = 'Contraseña';
+                }
+            });
+            
+            // Cambiar "Remember me?" por "¿Recordar contraseña?"
+            document.querySelectorAll('.form-check-label').forEach(label => {
+                if (label.textContent.includes('Remember me?')) {
+                    label.textContent = '¿Recordar contraseña?';
+                }
+            });
+            
+            // Cambiar "Forgot your password?" por "¿Olvidaste tu contraseña?"
+            document.querySelectorAll('a').forEach(link => {
+                if (link.textContent.includes('Forgot your password?')) {
+                    link.textContent = '¿Olvidaste tu contraseña?';
+                }
+                if (link.textContent.includes('Register as a new user')) {
+                    link.textContent = 'Registrarse como nuevo usuario';
+                }
+                if (link.textContent.includes('Resend email confirmation')) {
+                    link.textContent = 'Reenviar correo de confirmación';
+                }
+            });
+            
+            // Cambiar placeholders si existen
+            document.querySelectorAll('input[type="email"]').forEach(input => {
+                if (input.placeholder === 'Email') {
+                    input.placeholder = 'Correo electrónico';
+                }
+            });
+            
+            document.querySelectorAll('input[type="password"]').forEach(input => {
+                if (input.placeholder === 'Password') {
+                    input.placeholder = 'Contraseña';
+                }
+            });
+        }
+        
+        // Ejecutar inmediatamente
+        changeLoginTexts();
+        
+        // Ejecutar cada 500ms por si la página carga dinámicamente
+        const interval = setInterval(changeLoginTexts, 500);
+        
+        // Detener después de 5 segundos
+        setTimeout(() => clearInterval(interval), 5000);
+    });
+</script>
+<body style="background-color:cornsilk;">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-black border-bottom box-shadow mb-3">
+            <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
+                😤 Quejas y más Quejas 😅
+            </a>
+
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Quejas" asp-action="Index">Quejas</a>
+                        </li>
+                    </ul>
+
+                    <partial name="_LoginPartial" />
+                </div>
+            }
+            else
+            {
+                <!-- Cuando no está logueado, solo mostrar el partial de login -->
+                <partial name="_LoginPartial" />
+            }
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+           
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted text-center py-3">
+        <div class="container">
+            &copy; 2025 - Quejas y más Quejas by G4 
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
