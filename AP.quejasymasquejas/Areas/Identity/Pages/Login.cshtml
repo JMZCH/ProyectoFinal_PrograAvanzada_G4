@@ -1,0 +1,43 @@
+﻿@page
+@model AP.quejasymasquejas.Pages.LoginModel
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+        <div class="card shadow">
+            <div class="card-header bg-black text-white text-center">
+                <h3>🔐 Iniciar Sesión</h3>
+            </div>
+            <div class="card-body">
+                <p class="text-center text-muted">Usa tu cuenta para acceder al sistema</p>
+
+                <form method="post" action="/Identity/Account/Login?returnUrl=~/" class="mt-4">
+                    <div class="form-floating mb-3">
+                        <input type="email" name="Input.Email" class="form-control" placeholder="Correo electrónico" required>
+                        <label>Correo electrónico</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" name="Input.Password" class="form-control" placeholder="Contraseña" required>
+                        <label>Contraseña</label>
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" name="Input.RememberMe" value="true">
+                        <label class="form-check-label">Recordar mis datos</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 btn-lg">Iniciar Sesión</button>
+                </form>
+
+                <div class="text-center mt-3">
+                    <a href="/Identity/Account/Register" class="btn btn-outline-secondary w-100">
+                        📝 ¿No tienes cuenta? Regístrate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
