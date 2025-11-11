@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AP.quejasymasquejas.web.Models.FoodItem>
+
+@{
+    ViewData["Title"] = "Home Page";
+    var q = (string?)ViewData["q"] ?? "";
+}
+
+<h1 class="mb-3">Food Items</h1>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-auto">
+        <input name="q" value="@q" class="form-control" placeholder="Buscar por nombre, categoría, marca o código..." />
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-primary">Buscar</button>
+        <a class="btn btn-outline-secondary" href="@Url.Action("Index")">Limpiar</a>
+    </div>
+    <div class="col-auto ms-auto">
+        <a class="btn btn-success" href="@Url.Action("Create")">+ Nuevo</a>
+    </div>
+</form>
+
+<table class="table table-striped table-hover align-middle">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Marca</th>
+            <th class="text-end">Precio</th>
+            <th class="text-end">Stock</th>
+            <th>Rol</th>
+            <th>Activo</th>
+            <th style="width:160px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Category</td>
+                <td>@item.Brand</td>
+                <td class="text-end">@item.Price?.ToString("N2")</td>
+                <td class="text-end">@item.QuantityInStock</td>
+                <td>@item.Role?.RoleName</td>
+                <td>
+                    @if (item.IsActive == true)
+                    {
+                        <span class="badge bg-success">Sí</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">No</span>
+                    }
+                </td>
+                <td class="text-end">
+                    <a class="btn btn-sm btn-outline-primary" href="@Url.Action("Details", new { id = item.FoodItemID })">Ver</a>
+                    <a class="btn btn-sm btn-outline-warning" href="@Url.Action("Edit", new { id = item.FoodItemID })">Editar</a>
+                    <a class="btn btn-sm btn-outline-danger" href="@Url.Action("Delete", new { id = item.FoodItemID })">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

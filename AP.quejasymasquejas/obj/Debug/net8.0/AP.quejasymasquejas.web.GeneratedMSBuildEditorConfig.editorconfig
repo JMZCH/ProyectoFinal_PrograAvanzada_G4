@@ -15,103 +15,149 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
 build_property.RootNamespace = AP.quejasymasquejas.web
 build_property.RootNamespace = AP.quejasymasquejas.web
-build_property.ProjectDir = C:\Users\ccast\source\repos\AP.quejasymasquejas\AP.quejasymasquejas\AP.quejasymasquejas\
+build_property.ProjectDir = D:\AdvancedProgramming.Web\AP.quejasymasquejas_\AP.quejasymasquejas\AP.quejasymasquejas\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ccast\source\repos\AP.quejasymasquejas\AP.quejasymasquejas\AP.quejasymasquejas
+build_property.MSBuildProjectDirectory = D:\AdvancedProgramming.Web\AP.quejasymasquejas_\AP.quejasymasquejas\AP.quejasymasquejas
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Areas/Identity/Pages/Account/LoggedOut.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Areas/Identity/Pages/Account/LoggedOut.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dnZWRPdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Areas/Identity/Pages/Account/Logout.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Areas/Identity/Pages/Login.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Areas/Identity/Pages/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Account/Create.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Account/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Account/Delete.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Account/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Account/Details.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Account/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Account/Edit.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Account/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Account/Index.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Home/Index.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/FoodItems/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZEl0ZW1zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/FoodItems/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZEl0ZW1zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/FoodItems/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZEl0ZW1zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/FoodItems/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZEl0ZW1zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/FoodItems/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZEl0ZW1zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/FoodItems/_Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZEl0ZW1zXF9Gb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Home/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Home/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Home/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Home/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Home/Privacy.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Quejas/Create.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Home/_Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Quejas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlamFzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Quejas/Delete.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Quejas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlamFzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Quejas/Details.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Quejas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlamFzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Quejas/Edit.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Quejas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlamFzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Quejas/Index.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Quejas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlamFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Shared/Error.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Shared/_LoginPartial.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/_ViewImports.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/_ViewStart.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ccast/source/repos/AP.quejasymasquejas/AP.quejasymasquejas/AP.quejasymasquejas/Views/Shared/_Layout.cshtml]
+[D:/AdvancedProgramming.Web/AP.quejasymasquejas_/AP.quejasymasquejas/AP.quejasymasquejas/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-k3vpa42lx0

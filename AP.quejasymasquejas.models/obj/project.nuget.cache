@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "g/8Kjlo8dhI=",
+  "dgSpecHash": "7NBNvMqlFfY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas.models\\AP.quejasymasquejas.models.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\AdvancedProgramming.Web\\AP.quejasymasquejas_\\AP.quejasymasquejas\\AP.quejasymasquejas.models\\AP.quejasymasquejas.models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\arman\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.20\\microsoft.netcore.app.ref.8.0.20.nupkg.sha512",
+    "C:\\Users\\arman\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.20\\microsoft.windowsdesktop.app.ref.8.0.20.nupkg.sha512",
+    "C:\\Users\\arman\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.20\\microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512"
+  ],
   "logs": []
 }

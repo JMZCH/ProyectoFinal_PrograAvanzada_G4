@@ -1,0 +1,26 @@
+﻿@model AP.quejasymasquejas.web.Models.FoodItem
+@{
+    ViewData["Title"] = "Eliminar Food Item";
+}
+
+<h1>Eliminar Food Item</h1>
+<hr />
+<p class="text-danger">¿Seguro que deseas eliminar este registro?</p>
+
+<dl class="row">
+    <dt class="col-sm-3">Nombre</dt>
+    <dd class="col-sm-9">@Model.Name</dd>
+
+    <dt class="col-sm-3">Categoría</dt>
+    <dd class="col-sm-9">@Model.Category</dd>
+
+    <dt class="col-sm-3">Marca</dt>
+    <dd class="col-sm-9">@Model.Brand</dd>
+</dl>
+
+<form asp-action="Delete">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="FoodItemID" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a class="btn btn-outline-secondary" href="@Url.Action("Index")">Cancelar</a>
+</form>

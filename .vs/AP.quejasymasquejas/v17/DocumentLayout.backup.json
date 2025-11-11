@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\ccast\\source\\repos\\ap.quejasymasquejas\\ap.quejasymasquejas\\ap.quejasymasquejas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\ccast\\source\\repos\\ap.quejasymasquejas\\ap.quejasymasquejas\\ap.quejasymasquejas\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\ccast\\source\\repos\\ap.quejasymasquejas\\ap.quejasymasquejas\\ap.quejasymasquejas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\ccast\\source\\repos\\ap.quejasymasquejas\\ap.quejasymasquejas\\ap.quejasymasquejas\\areas\\identity\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\areas\\identity\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\ccast\\source\\repos\\ap.quejasymasquejas\\ap.quejasymasquejas\\ap.quejasymasquejas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\ccast\\source\\repos\\ap.quejasymasquejas\\ap.quejasymasquejas\\ap.quejasymasquejas\\areas\\identity\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,27 +43,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\appsettings.json",
+              "RelativeDocumentMoniker": "AP.quejasymasquejas\\appsettings.json",
+              "ToolTip": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\appsettings.json",
+              "RelativeToolTip": "AP.quejasymasquejas\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-04T02:39:32.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "AP.quejasymasquejas\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAuwFQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-02T02:54:38.623Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "AP.quejasymasquejas\\Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "AP.quejasymasquejas\\Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-02T02:49:48.066Z"
             },
             {
               "$type": "Document",
@@ -79,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml",
@@ -87,7 +88,8 @@
               "RelativeToolTip": "AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml",
               "ViewState": "AgIAABcAAAAAAAAAAAAUwCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-02T02:48:00.439Z"
+              "WhenOpened": "2025-11-02T02:48:00.439Z",
+              "EditorCaption": ""
             }
           ]
         }
