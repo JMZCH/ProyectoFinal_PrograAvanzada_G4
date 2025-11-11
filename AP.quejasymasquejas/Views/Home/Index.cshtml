@@ -1,43 +1,17 @@
-﻿@model IEnumerable<AP.quejasymasquejas.web.Models.FoodItem>
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
-    var q = (string?)ViewData["q"] ?? "";
 }
 
-<h1 class="mb-3">Food Items</h1>
+<div class="text-center">
+    <h1 class="display-4">
+        Bienvenido a <span style="color:red;">Quejas &amp; más Quejas</span>
+    </h1>
+    <p>
+        😏 Quejate hoy... y mañana no digas que no te lo advertimos 😏
+    </p>
 
-<form method="get" class="row g-2 mb-3">
-    <div class="col-auto">
-        <input name="q" value="@q" class="form-control" placeholder="Buscar por nombre, categoría, marca o código..." />
-    </div>
-    <div class="col-auto">
-        <!-- antes: Url.Action("Index") -->
-        <a class="btn btn-outline-secondary" href="@Url.Action("Index", "FoodItems")">Limpiar</a>
-        <button class="btn btn-primary">Buscar</button>
-    </div>
-    <div class="col-auto ms-auto">
-        <!-- antes: Url.Action("Create") -->
-        <a class="btn btn-success" href="@Url.Action("Create", "FoodItems")">+ Nuevo</a>
-    </div>
-</form>
+    <p style="color:blue">
+        🍼 Y Recuerda es mejor prevenir que.......Amamantar 🍼
+    </p>
+</div>
 
-<table class="table table-striped table-hover align-middle">
-    <thead> ... </thead>
-    <tbody>
-        @foreach (var item in (Model ?? Enumerable.Empty<AP.quejasymasquejas.web.Models.FoodItem>()))
-        {
-            <tr>
-                <td>@item.Name</td>
-                ...
-                <td class="text-end">
-                    <a class="btn btn-sm btn-outline-primary"
-                       href='@Url.Action("Details", "FoodItems", new { id = item.FoodItemID })'>Ver</a>
-                    <a class="btn btn-sm btn-outline-warning"
-                       href='@Url.Action("Edit", "FoodItems", new { id = item.FoodItemID })'>Editar</a>
-                    <a class="btn btn-sm btn-outline-danger"
-                       href='@Url.Action("Delete", "FoodItems", new { id = item.FoodItemID })'>Eliminar</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>

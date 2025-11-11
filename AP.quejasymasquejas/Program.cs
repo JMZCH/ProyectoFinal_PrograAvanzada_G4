@@ -1,39 +1,22 @@
-﻿using AP.quejasymasquejas.Data;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace AP.quejasymasquejas;
-
-public class Program
+namespace AP.quejasymasquejas.Pages.Account
 {
-    public static void Main(string[] args)
+    public class LogoutModel : PageModel
     {
-        var builder = WebApplication.CreateBuilder(args);
+        private readonly SignInManager<IdentityUser> _signInManager;
 
-        // DbContext (Foodbank)
-        builder.Services.AddDbContext<ApplicationDbContext>(opts =>
-            opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-        // Solo MVC (sin Identity)
-        builder.Services.AddControllersWithViews();
-
-        var app = builder.Build();
-
-        if (!app.Environment.IsDevelopment())
+        public LogoutModel(SignInManager<IdentityUser> signInManager)
         {
-            app.UseExceptionHandler("/Home/Error");
-            app.UseHsts();
+            _signInManager = signInManager;
         }
 
-        app.UseHttpsRedirection();
-        app.UseStaticFiles();
-        app.UseRouting();
-        app.UseAuthorization();
-
-        // Página inicial → FoodItems/Index
-        app.MapControllerRoute(
-            name: "default",
-            pattern: "{controller=FoodItems}/{action=Index}/{id?}");
-
-        app.Run();
+        public async Task<IActionResult> OnPostAsync()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToPage("/Account/LoggedOut");
+        }
     }
 }

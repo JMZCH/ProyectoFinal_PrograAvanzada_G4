@@ -1,89 +1,133 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Foodbank · FoodItems</title>
+    <title>@ViewData["Title"] - 😅 Quejas y más Quejas 💬</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AP.quejasymasquejas.styles.css" asp-append-version="true" />
 </head>
-
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
+        // Función para cambiar todos los textos
         function changeLoginTexts() {
-            document.querySelectorAll('button').forEach(btn => {
-                if (btn.textContent.trim() === 'Log in') btn.textContent = 'Iniciar sesión';
+            // Cambiar "Log in" por "Iniciar Sesión" en botones
+            document.querySelectorAll('button').forEach(button => {
+                if (button.textContent.trim() === 'Log in') {
+                    button.textContent = 'Iniciar Sesión';
+                }
             });
+            
+            // Cambiar "Use a local account to log in."
             document.querySelectorAll('h2').forEach(h2 => {
-                if (h2.textContent.includes('Use a local account to log in'))
+                if (h2.textContent.includes('Use a local account to log in')) {
                     h2.textContent = 'Usa tu cuenta para iniciar sesión';
+                }
             });
-            document.querySelectorAll('label').forEach(l => {
-                if (l.textContent.trim() === 'Email') l.textContent = 'Correo electrónico';
-                if (l.textContent.trim() === 'Password') l.textContent = 'Contraseña';
+            
+            // Cambiar "Email" por "Correo electrónico"
+            document.querySelectorAll('label').forEach(label => {
+                if (label.textContent.trim() === 'Email') {
+                    label.textContent = 'Correo electrónico';
+                }
+                if (label.textContent.trim() === 'Password') {
+                    label.textContent = 'Contraseña';
+                }
             });
-            document.querySelectorAll('.form-check-label').forEach(l => {
-                if (l.textContent.includes('Remember me?')) l.textContent = '¿Recordar contraseña?';
+            
+            // Cambiar "Remember me?" por "¿Recordar contraseña?"
+            document.querySelectorAll('.form-check-label').forEach(label => {
+                if (label.textContent.includes('Remember me?')) {
+                    label.textContent = '¿Recordar contraseña?';
+                }
             });
-            document.querySelectorAll('a').forEach(a => {
-                if (a.textContent.includes('Forgot your password?')) a.textContent = '¿Olvidaste tu contraseña?';
-                if (a.textContent.includes('Register as a new user')) a.textContent = 'Registrarse como nuevo usuario';
-                if (a.textContent.includes('Resend email confirmation')) a.textContent = 'Reenviar correo de confirmación';
+            
+            // Cambiar "Forgot your password?" por "¿Olvidaste tu contraseña?"
+            document.querySelectorAll('a').forEach(link => {
+                if (link.textContent.includes('Forgot your password?')) {
+                    link.textContent = '¿Olvidaste tu contraseña?';
+                }
+                if (link.textContent.includes('Register as a new user')) {
+                    link.textContent = 'Registrarse como nuevo usuario';
+                }
+                if (link.textContent.includes('Resend email confirmation')) {
+                    link.textContent = 'Reenviar correo de confirmación';
+                }
             });
-            document.querySelectorAll('input[type="email"]').forEach(i => {
-                if (i.placeholder === 'Email') i.placeholder = 'Correo electrónico';
+            
+            // Cambiar placeholders si existen
+            document.querySelectorAll('input[type="email"]').forEach(input => {
+                if (input.placeholder === 'Email') {
+                    input.placeholder = 'Correo electrónico';
+                }
             });
-            document.querySelectorAll('input[type="password"]').forEach(i => {
-                if (i.placeholder === 'Password') i.placeholder = 'Contraseña';
+            
+            document.querySelectorAll('input[type="password"]').forEach(input => {
+                if (input.placeholder === 'Password') {
+                    input.placeholder = 'Contraseña';
+                }
             });
         }
+        
+        // Ejecutar inmediatamente
         changeLoginTexts();
+        
+        // Ejecutar cada 500ms por si la página carga dinámicamente
         const interval = setInterval(changeLoginTexts, 500);
+        
+        // Detener después de 5 segundos
         setTimeout(() => clearInterval(interval), 5000);
     });
 </script>
-
-<body class="bg-light">
+<body style="background-color:cornsilk;">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark border-bottom shadow-sm mb-3">
-            <a class="navbar-brand fw-semibold" asp-area="" asp-controller="Home" asp-action="Index">
-                Foodbank · FoodItems
+        <nav class="navbar navbar-expand-sm navbar-dark bg-black border-bottom box-shadow mb-3">
+            <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
+                😤 Quejas y más Quejas 😅
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-controller="FoodItems" asp-action="Index">Productos</a>
-                    </li>
-                </ul>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Quejas" asp-action="Index">Quejas</a>
+                        </li>
+                    </ul>
 
+                    <partial name="_LoginPartial" />
+                </div>
+            }
+            else
+            {
+                <!-- Cuando no está logueado, solo mostrar el partial de login -->
                 <partial name="_LoginPartial" />
-            </div>
+            }
         </nav>
     </header>
 
     <div class="container">
         <main role="main" class="pb-3">
+           
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top text-muted text-center py-3 bg-white">
+    <footer class="border-top footer text-muted text-center py-3">
         <div class="container">
-            &copy; 2025 · Foodbank · Módulo FoodItems
+            &copy; 2025 - Quejas y más Quejas by G4 
         </div>
     </footer>
 
