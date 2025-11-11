@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\controllers\\fooditemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\controllers\\fooditemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,16 +23,8 @@
       "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\controllers\\fooditemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\controllers\\fooditemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\areas\\identity\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -46,55 +46,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 486,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Data\\ApplicationDbContext.cs*",
-              "RelativeToolTip": "AP.quejasymasquejas\\Data\\ApplicationDbContext.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "AP.quejasymasquejas\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T01:54:12.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "QuejasController.cs",
               "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\QuejasController.cs",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\Controllers\\QuejasController.cs",
-              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\QuejasController.cs*",
-              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\QuejasController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJgAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\QuejasController.cs",
+              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\QuejasController.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAYwJgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T01:53:38.868Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "FoodItemsController.cs",
               "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\FoodItemsController.cs",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\Controllers\\FoodItemsController.cs",
-              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\FoodItemsController.cs*",
-              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\FoodItemsController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\FoodItemsController.cs",
+              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\FoodItemsController.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAAwJEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T01:52:39.327Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\HomeController.cs*",
-              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\HomeController.cs*",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T01:51:34.384Z",
@@ -102,30 +106,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\AccountController.cs*",
-              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\AccountController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAuwBIAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T01:51:13.965Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\appsettings.json",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\appsettings.json",
               "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\appsettings.json",
               "RelativeToolTip": "AP.quejasymasquejas\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-11-04T02:39:32.809Z",
               "EditorCaption": ""

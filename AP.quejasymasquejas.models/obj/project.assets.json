@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AdvancedProgramming.Web\\AP.quejasymasquejas_\\AP.quejasymasquejas\\AP.quejasymasquejas.models\\AP.quejasymasquejas.models.csproj",
+      "projectUniqueName": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas.models\\AP.quejasymasquejas.models.csproj",
       "projectName": "AP.quejasymasquejas.models",
-      "projectPath": "D:\\AdvancedProgramming.Web\\AP.quejasymasquejas_\\AP.quejasymasquejas\\AP.quejasymasquejas.models\\AP.quejasymasquejas.models.csproj",
+      "projectPath": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas.models\\AP.quejasymasquejas.models.csproj",
       "packagesPath": "C:\\Users\\arman\\.nuget\\packages\\",
-      "outputPath": "D:\\AdvancedProgramming.Web\\AP.quejasymasquejas_\\AP.quejasymasquejas\\AP.quejasymasquejas.models\\obj\\",
+      "outputPath": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas.models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,7 +51,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -67,26 +67,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

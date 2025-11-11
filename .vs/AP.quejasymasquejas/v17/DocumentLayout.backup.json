@@ -1,21 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\",
+  "WorkspaceRootPath": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\ccast\\source\\repos\\ap.quejasymasquejas\\ap.quejasymasquejas\\ap.quejasymasquejas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\ccast\\source\\repos\\ap.quejasymasquejas\\ap.quejasymasquejas\\ap.quejasymasquejas\\areas\\identity\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\controllers\\fooditemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\controllers\\fooditemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\controllers\\quejascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\controllers\\quejascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\areas\\identity\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\areas\\identity\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\ccast\\source\\repos\\ap.quejasymasquejas\\ap.quejasymasquejas\\ap.quejasymasquejas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\ccast\\source\\repos\\ap.quejasymasquejas\\ap.quejasymasquejas\\ap.quejasymasquejas\\areas\\identity\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|c:\\users\\arman\\desktop\\backups\\ap\\repo\\proyectofinal_prograavanzada_g4\\ap.quejasymasquejas\\areas\\identity\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FF56D77-BFC9-47A4-869D-0983CD60D31C}|AP.quejasymasquejas\\AP.quejasymasquejas.web.csproj|solutionrelative:ap.quejasymasquejas\\areas\\identity\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,53 +46,109 @@
       "DocumentGroups": [
         {
           "DockedWidth": 486,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "AP.quejasymasquejas\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "AP.quejasymasquejas\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:54:12.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "QuejasController.cs",
+              "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\QuejasController.cs",
+              "RelativeDocumentMoniker": "AP.quejasymasquejas\\Controllers\\QuejasController.cs",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\QuejasController.cs",
+              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\QuejasController.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAYwJgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:53:38.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FoodItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\FoodItemsController.cs",
+              "RelativeDocumentMoniker": "AP.quejasymasquejas\\Controllers\\FoodItemsController.cs",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\FoodItemsController.cs",
+              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\FoodItemsController.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAAwJoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:52:39.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "AP.quejasymasquejas\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:51:34.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "AP.quejasymasquejas\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "AP.quejasymasquejas\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAuwBIAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:51:13.965Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\appsettings.json",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\appsettings.json",
-              "ToolTip": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\appsettings.json",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\appsettings.json",
               "RelativeToolTip": "AP.quejasymasquejas\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-11-04T02:39:32.809Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "AP.quejasymasquejas\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-02T02:54:38.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-02T02:54:38.623Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Login.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml.cs",
-              "ToolTip": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml.cs",
               "RelativeToolTip": "AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -80,16 +156,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml",
               "RelativeDocumentMoniker": "AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml",
-              "ToolTip": "C:\\Users\\ccast\\source\\repos\\AP.quejasymasquejas\\AP.quejasymasquejas\\AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml",
+              "ToolTip": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml",
               "RelativeToolTip": "AP.quejasymasquejas\\Areas\\Identity\\Pages\\Login.cshtml",
               "ViewState": "AgIAABcAAAAAAAAAAAAUwCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-02T02:48:00.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-02T02:48:00.439Z"
             }
           ]
         }

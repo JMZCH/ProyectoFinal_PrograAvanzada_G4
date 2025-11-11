@@ -1,12 +1,12 @@
 ﻿using AP.quejasymasquejas.Data;
-using AP.quejasymasquejas.Models; // <- Asegúrate que aquí esté tu modelo Queja
-using Microsoft.AspNetCore.Authorization; // <- Para [Authorize]
+using AP.quejasymasquejas.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace AP.quejasymasquejas.web.Controllers
 {
-    [Authorize] // <- Solo usuarios logueados pueden acceder
+    [Authorize]
     public class AccountController : Controller
     {
         private readonly ApplicationDbContext _context;

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ap.quejasymasquejas.data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ff8303b17fe8d956ae2006883eebfd7ce680b92")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ap.quejasymasquejas.data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ap.quejasymasquejas.data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
