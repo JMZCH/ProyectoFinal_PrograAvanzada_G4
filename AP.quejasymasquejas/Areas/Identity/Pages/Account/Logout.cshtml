@@ -1,0 +1,14 @@
+﻿@page
+@model AP.quejasymasquejas.Pages.Account.LogoutModel
+@{
+    ViewData["Title"] = "Cerrar sesión";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center mt-5">
+    <h2>¿Deseas cerrar sesión?</h2>
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Cerrar sesión</button>
+    </form>
+    <a asp-page="/Index" class="btn btn-primary mt-3">Volver al inicio</a>
+</div>
