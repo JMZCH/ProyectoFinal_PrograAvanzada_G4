@@ -22,3 +22,16 @@ C:\Users\ccast\source\repos\AP.quejasymasquejas\AP.quejasymasquejas\Ap.quejasyma
 C:\Users\ccast\source\repos\AP.quejasymasquejas\AP.quejasymasquejas\Ap.quejasymasquejas.data\obj\Debug\net8.0\refint\Ap.quejasymasquejas.data.dll
 C:\Users\ccast\source\repos\AP.quejasymasquejas\AP.quejasymasquejas\Ap.quejasymasquejas.data\obj\Debug\net8.0\Ap.quejasymasquejas.data.pdb
 C:\Users\ccast\source\repos\AP.quejasymasquejas\AP.quejasymasquejas\Ap.quejasymasquejas.data\obj\Debug\net8.0\ref\Ap.quejasymasquejas.data.dll
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\bin\Debug\net8.0\Ap.quejasymasquejas.data.deps.json
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\bin\Debug\net8.0\Ap.quejasymasquejas.data.dll
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\bin\Debug\net8.0\Ap.quejasymasquejas.data.pdb
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\obj\Debug\net8.0\Ap.quejasymasquejas.data.csproj.AssemblyReference.cache
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\obj\Debug\net8.0\Ap.quejasymasquejas.data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\obj\Debug\net8.0\Ap.quejasymasquejas.data.AssemblyInfoInputs.cache
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\obj\Debug\net8.0\Ap.quejasymasquejas.data.AssemblyInfo.cs
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\obj\Debug\net8.0\Ap.quejasymasquejas.data.csproj.CoreCompileInputs.cache
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\obj\Debug\net8.0\Ap.quejasymasquejas.data.sourcelink.json
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\obj\Debug\net8.0\Ap.quejasymasquejas.data.dll
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\obj\Debug\net8.0\refint\Ap.quejasymasquejas.data.dll
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\obj\Debug\net8.0\Ap.quejasymasquejas.data.pdb
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\Ap.quejasymasquejas.data\obj\Debug\net8.0\ref\Ap.quejasymasquejas.data.dll

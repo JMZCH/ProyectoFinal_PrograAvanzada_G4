@@ -1,14 +1,40 @@
-﻿@page
-@model AP.quejasymasquejas.Pages.Account.LogoutModel
-@{
-    ViewData["Title"] = "Cerrar sesión";
-    Layout = "/Views/Shared/_Layout.cshtml";
-}
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-<div class="text-center mt-5">
-    <h2>¿Deseas cerrar sesión?</h2>
-    <form method="post">
-        <button type="submit" class="btn btn-danger">Cerrar sesión</button>
-    </form>
-    <a asp-page="/Index" class="btn btn-primary mt-3">Volver al inicio</a>
-</div>
+namespace AP.quejasymasquejas.Areas.Identity.Pages.Account
+{
+    [AllowAnonymous]
+    public class LogoutModel : PageModel
+    {
+        private readonly SignInManager<IdentityUser>
+    _signInManager;
+    private readonly ILogger<LogoutModel>
+        _logger;
+
+        public LogoutModel(SignInManager<IdentityUser>
+            signInManager, ILogger<LogoutModel>
+                logger)
+                {
+                _signInManager = signInManager;
+                _logger = logger;
+                }
+
+                public async Task<IActionResult>
+                    OnPost(string? returnUrl = null)
+                    {
+                    await _signInManager.SignOutAsync();
+                    _logger.LogInformation("Usuario cerró sesión.");
+
+                    if (returnUrl != null)
+                    {
+                    return LocalRedirect(returnUrl);
+                    }
+                    else
+                    {
+                    return RedirectToPage("/Account/Logout");
+                    }
+                    }
+                    }
+                    }

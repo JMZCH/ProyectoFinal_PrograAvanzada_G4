@@ -1,17 +1,184 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using AP.quejasymasquejas.Data
+@using Microsoft.EntityFrameworkCore
+@inject ApplicationDbContext DbContext
+
+@{
+    ViewData["Title"] = "Inicio";
+    var ultimasQuejas = await DbContext.Quejas
+        .Include(q => q.Usuario)
+        .OrderByDescending(q => q.FechaRegistro)
+        .Take(5)
+        .ToListAsync();
+    var totalQuejas = await DbContext.Quejas.CountAsync();
 }
 
-<div class="text-center">
-    <h1 class="display-4">
-        Bienvenido a <span style="color:red;">Quejas &amp; más Quejas</span>
-    </h1>
-    <p>
-        😏 Quejate hoy... y mañana no digas que no te lo advertimos 😏
-    </p>
-
-    <p style="color:blue">
-        🍼 Y Recuerda es mejor prevenir que.......Amamantar 🍼
-    </p>
+<!-- Hero Section -->
+<div class="hero-section text-center py-5 mb-4 rounded" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container">
+        <h1 class="display-4 text-white fw-bold">
+            Quejas y más Quejas
+        </h1>
+        <p class="lead text-white-50 mt-3">
+            El lugar donde tu voz importa. ¡Desahógate y conecta con otros!
+        </p>
+        <div class="mt-4">
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <a asp-controller="Quejas" asp-action="Create" class="btn btn-light btn-lg me-2">
+                    Crear Queja
+                </a>
+                <a asp-controller="Quejas" asp-action="Index" class="btn btn-outline-light btn-lg">
+                    Ver Todas
+                </a>
+            }
+            else
+            {
+                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-light btn-lg me-2">
+                    Únete Ahora
+                </a>
+                <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-light btn-lg">
+                    Iniciar Sesión
+                </a>
+            }
+        </div>
+    </div>
 </div>
 
+<div class="container-fluid px-4">
+    <div class="row">
+        <!-- Columna principal -->
+        <div class="col-lg-8">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="text-muted mb-0">Quejas Recientes</h5>
+                <a asp-controller="Quejas" asp-action="Index" class="btn btn-sm btn-outline-primary">
+                    Ver todas →
+                </a>
+            </div>
+
+            @if (!ultimasQuejas.Any())
+            {
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body text-center py-5">
+                        <h1></h1>
+                        <h5 class="text-muted">No hay quejas todavía</h5>
+                        <p class="text-muted">¡Sé el primero en quejarte!</p>
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <a asp-controller="Quejas" asp-action="Create" class="btn btn-primary">
+                                Crear Primera Queja
+                            </a>
+                        }
+                    </div>
+                </div>
+            }
+            else
+            {
+                @foreach (var item in ultimasQuejas)
+                {
+                    var autorNombre = item.Usuario?.UserName?.Split('@')[0] ?? "Anónimo";
+                    var diferencia = DateTime.Now - item.FechaRegistro;
+                    var tiempo = diferencia.TotalMinutes < 60 ? $"hace {(int)diferencia.TotalMinutes} min" :
+                    diferencia.TotalHours < 24 ? $"hace {(int)diferencia.TotalHours} h" :
+                    $"hace {(int)diferencia.TotalDays} días";
+
+                    <div class="card mb-3 shadow-sm post-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="avatar-circle me-2">
+                                    @autorNombre.Substring(0, 1).ToUpper()
+                                </div>
+                                <div>
+                                    <span class="fw-bold text-primary">@autorNombre</span>
+                                    <span class="text-muted">• @tiempo</span>
+                                </div>
+                                <span class="badge bg-secondary rounded-pill ms-auto">@item.Categoria</span>
+                            </div>
+
+                            <a asp-controller="Quejas" asp-action="Details" asp-route-id="@item.QuejaID"
+                               class="text-decoration-none">
+                                <h5 class="card-title post-title">@item.Titulo</h5>
+                            </a>
+
+                            <p class="card-text text-muted small">
+                                @(item.Descripcion.Length > 150 ? item.Descripcion.Substring(0, 150) + "..." : item.Descripcion)
+                            </p>
+
+                            <div class="d-flex align-items-center">
+                                <span class="badge @(item.Estado == "Pendiente" ? "bg-warning text-dark" :
+                                                                                            item.Estado == "Resuelto" ? "bg-success" : "bg-secondary") me-2">
+                            @item.Estado
+                        </span>
+                        <a asp-controller="Quejas" asp-action="Details" asp-route-id="@item.QuejaID"
+                           class="btn btn-sm btn-light">
+                            Ver más
+                        </a>
+                    </div>
+                </div>
+            </div>
+                        }
+            }
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <!-- Stats -->
+            <div class="card shadow-sm mb-3">
+                <div class="card-header bg-primary text-white">
+                    <h6 class="mb-0">Comunidad</h6>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <h2 class="text-primary mb-0">@totalQuejas</h2>
+                        <small class="text-muted">Quejas publicadas</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cómo funciona -->
+            <div class="card shadow-sm mb-3">
+                <div class="card-header">
+                    <h6 class="mb-0">¿Cómo funciona?</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <span class="badge bg-primary rounded-circle p-2">1</span>
+                        </div>
+                        <div>
+                            <strong>Regístrate</strong>
+                            <p class="small text-muted mb-0">Crea tu cuenta gratis</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <span class="badge bg-primary rounded-circle p-2">2</span>
+                        </div>
+                        <div>
+                            <strong>Publica</strong>
+                            <p class="small text-muted mb-0">Comparte tu queja</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <span class="badge bg-primary rounded-circle p-2">3</span>
+                        </div>
+                        <div>
+                            <strong>Conecta</strong>
+                            <p class="small text-muted mb-0">Interactúa con la comunidad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer del sidebar -->
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <p class="small text-muted mb-2">
+                        Recuerda: es mejor prevenir que... amamantar 
+                    </p>
+                    <small class="text-muted">© 2025 - Quejas y más Quejas by G4</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

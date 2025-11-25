@@ -1,57 +1,62 @@
 ﻿@model AP.quejasymasquejas.Models.Queja
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar Queja";
+    var autorNombre = Model.Usuario?.UserName?.Split('@')[0] ?? "Anónimo";
 }
 
-<h1>Delete</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <a asp-action="Index" class="btn btn-link text-muted mb-3 ps-0">
+                ← Volver a las quejas
+            </a>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Queja</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Titulo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Titulo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaRegistro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaRegistro)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Prioridad)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Prioridad)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Categoria)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Categoria)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="QuejaID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+            <div class="alert alert-danger mb-4">
+                <h5 class="alert-heading">⚠️ ¿Estás seguro?</h5>
+                <p class="mb-0">Esta acción eliminará la queja permanentemente y no se puede deshacer.</p>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0">🗑️ Eliminar Queja</h5>
+                </div>
+                <div class="card-body">
+                    <!-- Preview del post a eliminar -->
+                    <div class="border rounded p-3 bg-light mb-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="avatar-circle me-2">
+                                @autorNombre.Substring(0, 1).ToUpper()
+                            </div>
+                            <div>
+                                <span class="fw-bold">@autorNombre</span>
+                                <br />
+                                <small class="text-muted">@Model.FechaRegistro.ToString("dd/MM/yyyy HH:mm")</small>
+                            </div>
+                        </div>
+                        <h5>@Model.Titulo</h5>
+                        <p class="text-muted mb-2">@Model.Descripcion</p>
+                        <div>
+                            <span class="badge bg-secondary">@Model.Categoria</span>
+                            <span class="badge bg-secondary">@Model.Prioridad</span>
+                            <span class="badge bg-secondary">@Model.Estado</span>
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="QuejaID" />
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a asp-action="Index" class="btn btn-outline-secondary">
+                                Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-danger btn-lg">
+                                🗑️ Sí, Eliminar Queja
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,54 +1,182 @@
 ﻿@model AP.quejasymasquejas.Models.Queja
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.Titulo;
+    var autorNombre = Model.Usuario?.UserName?.Split('@')[0] ?? "Anónimo";
+    var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    var isOwner = currentUserId == Model.UsuarioId;
 }
 
-<h1>Details</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Botón volver -->
+            <a asp-action="Index" class="btn btn-link text-muted mb-3 ps-0">
+                ← Volver a las quejas
+            </a>
 
-<div>
-    <h4>Queja</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Titulo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Titulo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaRegistro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaRegistro)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Prioridad)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Prioridad)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Categoria)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Categoria)
-        </dd>
-    </dl>
+            <!-- Post principal -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <!-- Header -->
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="avatar-circle me-2">
+                            @autorNombre.Substring(0, 1).ToUpper()
+                        </div>
+                        <div>
+                            <span class="fw-bold text-primary">@autorNombre</span>
+                            <br />
+                            <small class="text-muted">
+                                Publicado el @Model.FechaRegistro.ToString("dd 'de' MMMM 'de' yyyy 'a las' HH:mm")
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- Badges -->
+                    <div class="mb-3">
+                        <span class="badge rounded-pill @GetCategoriaBadgeClass(Model.Categoria) me-1">
+                            @Model.Categoria
+                        </span>
+                        <span class="badge rounded-pill @GetPrioridadBadgeClass(Model.Prioridad) me-1">
+                            @GetPrioridadIcon(Model.Prioridad) @Model.Prioridad
+                        </span>
+                        <span class="badge @GetEstadoBadgeClass(Model.Estado)">
+                            @GetEstadoIcon(Model.Estado) @Model.Estado
+                        </span>
+                    </div>
+
+                    <!-- Título -->
+                    <h3 class="card-title mb-3">@Model.Titulo</h3>
+
+                    <!-- Contenido -->
+                    <div class="card-text post-content mb-4" style="white-space: pre-wrap; line-height: 1.7;">
+                        @Model.Descripcion
+                    </div>
+
+                    <hr />
+
+                    <!-- Acciones -->
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <button class="btn btn-sm btn-light me-2" onclick="compartir()">
+                                🔗 Compartir
+                            </button>
+                            <button class="btn btn-sm btn-light" onclick="window.print()">
+                                🖨️ Imprimir
+                            </button>
+                        </div>
+                        @if (isOwner)
+                        {
+                            <div>
+                                <a asp-action="Edit" asp-route-id="@Model.QuejaID" class="btn btn-sm btn-outline-primary me-2">
+                                    ✏️ Editar
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@Model.QuejaID" class="btn btn-sm btn-outline-danger">
+                                    🗑️ Eliminar
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de comentarios (placeholder) -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h6 class="mb-0">💬 Comentarios</h6>
+                </div>
+                <div class="card-body">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <div class="mb-4">
+                            <textarea class="form-control mb-2" rows="3" placeholder="Escribe un comentario..." disabled></textarea>
+                            <button class="btn btn-primary btn-sm" disabled>
+                                Comentar (Próximamente)
+                            </button>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-light text-center">
+                            <a asp-area="Identity" asp-page="/Account/Login">Inicia sesión</a> para comentar.
+                        </div>
+                    }
+
+                    <div class="text-center text-muted py-4">
+                        <p>🚧 Los comentarios estarán disponibles próximamente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.QuejaID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+@functions {
+    string GetCategoriaBadgeClass(string categoria)
+    {
+        return categoria switch
+        {
+            "Servicio" => "bg-info",
+            "Producto" => "bg-success",
+            "Atención" => "bg-warning text-dark",
+            "Infraestructura" => "bg-danger",
+            _ => "bg-secondary"
+        };
+    }
+
+    string GetPrioridadBadgeClass(string prioridad)
+    {
+        return prioridad switch
+        {
+            "Urgente" => "bg-danger",
+            "Alta" => "bg-warning text-dark",
+            "Normal" => "bg-secondary",
+            "Baja" => "bg-light text-dark",
+            _ => "bg-secondary"
+        };
+    }
+
+    string GetPrioridadIcon(string prioridad)
+    {
+        return prioridad switch
+        {
+            "Urgente" => "🔥",
+            "Alta" => "⚠️",
+            "Normal" => "📋",
+            "Baja" => "📝",
+            _ => "📋"
+        };
+    }
+
+    string GetEstadoBadgeClass(string estado)
+    {
+        return estado switch
+        {
+            "Pendiente" => "bg-warning text-dark",
+            "En Proceso" => "bg-info",
+            "Resuelto" => "bg-success",
+            "Cerrado" => "bg-secondary",
+            _ => "bg-light text-dark"
+        };
+    }
+
+    string GetEstadoIcon(string estado)
+    {
+        return estado switch
+        {
+            "Pendiente" => "⏳",
+            "En Proceso" => "🔄",
+            "Resuelto" => "✅",
+            "Cerrado" => "🔒",
+            _ => "📋"
+        };
+    }
+}
+
+<script>
+    function compartir() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('¡Enlace copiado al portapapeles!');
+        });
+    }
+</script>

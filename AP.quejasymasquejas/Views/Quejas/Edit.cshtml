@@ -1,59 +1,94 @@
 ﻿@model AP.quejasymasquejas.Models.Queja
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Queja";
 }
 
-<h1>Edit</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <a asp-action="Index" class="btn btn-link text-muted mb-3 ps-0">
+                ← Volver a las quejas
+            </a>
 
-<h4>Queja</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="QuejaID" />
-            <div class="form-group">
-                <label asp-for="Titulo" class="control-label"></label>
-                <input asp-for="Titulo" class="form-control" />
-                <span asp-validation-for="Titulo" class="text-danger"></span>
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning">
+                    <h5 class="mb-0">✏️ Editar Queja</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                        <input type="hidden" asp-for="QuejaID" />
+
+                        <!-- Título -->
+                        <div class="mb-4">
+                            <label asp-for="Titulo" class="form-label fw-bold">
+                                Título <span class="text-danger">*</span>
+                            </label>
+                            <input asp-for="Titulo" class="form-control form-control-lg" maxlength="200" />
+                            <span asp-validation-for="Titulo" class="text-danger"></span>
+                        </div>
+
+                        <!-- Descripción -->
+                        <div class="mb-4">
+                            <label asp-for="Descripcion" class="form-label fw-bold">
+                                Descripción <span class="text-danger">*</span>
+                            </label>
+                            <textarea asp-for="Descripcion" class="form-control" rows="6"></textarea>
+                            <span asp-validation-for="Descripcion" class="text-danger"></span>
+                        </div>
+
+                        <!-- Categoría, Prioridad y Estado -->
+                        <div class="row mb-4">
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <label asp-for="Categoria" class="form-label fw-bold">Categoría</label>
+                                <select asp-for="Categoria" class="form-select">
+                                    <option value="General">🏷️ General</option>
+                                    <option value="Servicio">🛠️ Servicio</option>
+                                    <option value="Producto">📦 Producto</option>
+                                    <option value="Atención">👥 Atención al Cliente</option>
+                                    <option value="Infraestructura">🏗️ Infraestructura</option>
+                                    <option value="Otro">📋 Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <label asp-for="Prioridad" class="form-label fw-bold">Prioridad</label>
+                                <select asp-for="Prioridad" class="form-select">
+                                    <option value="Baja">📝 Baja</option>
+                                    <option value="Normal">📋 Normal</option>
+                                    <option value="Alta">⚠️ Alta</option>
+                                    <option value="Urgente">🔥 Urgente</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="Estado" class="form-label fw-bold">Estado</label>
+                                <select asp-for="Estado" class="form-select">
+                                    <option value="Pendiente">⏳ Pendiente</option>
+                                    <option value="En Proceso">🔄 En Proceso</option>
+                                    <option value="Resuelto">✅ Resuelto</option>
+                                    <option value="Cerrado">🔒 Cerrado</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                            <a asp-action="Index" class="btn btn-outline-secondary">
+                                Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-warning btn-lg">
+                                💾 Guardar Cambios
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
-                <span asp-validation-for="Descripcion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaRegistro" class="control-label"></label>
-                <input asp-for="FechaRegistro" class="form-control" />
-                <span asp-validation-for="FechaRegistro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Estado" class="control-label"></label>
-                <input asp-for="Estado" class="form-control" />
-                <span asp-validation-for="Estado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Prioridad" class="control-label"></label>
-                <input asp-for="Prioridad" class="form-control" />
-                <span asp-validation-for="Prioridad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Categoria" class="control-label"></label>
-                <input asp-for="Categoria" class="form-control" />
-                <span asp-validation-for="Categoria" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
