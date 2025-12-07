@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas.models\\AP.quejasymasquejas.models.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas.models\\AP.quejasymasquejas.models.csproj",
         "packagesPath": "C:\\Users\\arman\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas.models\\obj\\",
+=======
+    "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas.Models\\AP.quejasymasquejas.Models.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas.Models\\AP.quejasymasquejas.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas.Models\\AP.quejasymasquejas.Models.csproj",
+        "projectName": "AP.quejasymasquejas.Models",
+        "projectPath": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas.Models\\AP.quejasymasquejas.Models.csproj",
+        "packagesPath": "C:\\Users\\arman\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arman\\Desktop\\Backups\\AP\\Repo\\ProyectoFinal_PrograAvanzada_G4\\AP.quejasymasquejas.Models\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +63,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,242 @@
+@model AP.quejasymasquejas.Models.ViewModels.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>😤 Quejas y más Quejas</h1>
+    <p class="lead">El lugar donde tu voz importa. ¡Desahógate y conecta con la comunidad!</p>
+    <div class="mt-4">
+        @if (User.Identity?.IsAuthenticated == true)
+        {
+            <a asp-controller="Quejas" asp-action="Create" class="btn btn-light me-2">
+                <i class="bi bi-plus-lg me-1"></i> Crear Queja
+            </a>
+            <a asp-controller="Quejas" asp-action="Index" class="btn btn-outline-light">
+                <i class="bi bi-card-list me-1"></i> Ver Todas
+            </a>
+        }
+        else
+        {
+            <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-light me-2">
+                <i class="bi bi-person-plus me-1"></i> Únete Ahora
+            </a>
+            <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-light">
+                <i class="bi bi-box-arrow-in-right me-1"></i> Iniciar Sesión
+            </a>
+        }
+    </div>
+</div>
+
+<div class="row">
+    <!-- Columna Principal -->
+    <div class="col-lg-8">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0" style="color: var(--reddit-gray);">
+                <i class="bi bi-fire text-danger"></i> Quejas Recientes
+            </h5>
+            <a asp-controller="Quejas" asp-action="Index" class="btn btn-sm btn-outline-secondary">
+                Ver todas <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+        @if (!Model.UltimasQuejas.Any())
+        {
+            <div class="post-card">
+                <div class="empty-state">
+                    <div class="empty-state-icon">😶</div>
+                    <h5>No hay quejas todavía</h5>
+                    <p>¡Sé el primero en quejarte!</p>
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a asp-controller="Quejas" asp-action="Create" class="btn btn-reddit">
+                            Crear Primera Queja
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+        else
+        {
+            @foreach (var item in Model.UltimasQuejas)
+            {
+                <div class="post-card">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <!-- Columna de votos -->
+                            <div class="vote-column">
+                                <button class="vote-btn" title="Votar positivo">
+                                    <i class="bi bi-arrow-up-circle"></i>
+                                </button>
+                                <span class="vote-count">0</span>
+                                <button class="vote-btn downvote" title="Votar negativo">
+                                    <i class="bi bi-arrow-down-circle"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Contenido -->
+                            <div class="post-content-area">
+                                <div class="post-meta">
+                                    <span class="badge badge-categoria @GetCategoriaBadge(item.Categoria)">@item.Categoria</span>
+                                    • Publicado por <a href="#">u/@item.NombreAutor</a>
+                                    • @item.TiempoTranscurrido
+                                </div>
+                                
+                                <a asp-controller="Quejas" asp-action="Details" asp-route-id="@item.QuejaId" class="text-decoration-none">
+                                    <h5 class="post-title">@item.Titulo</h5>
+                                </a>
+                                
+                                <p class="post-preview">@item.DescripcionCorta</p>
+                                
+                                <div class="d-flex align-items-center flex-wrap gap-2 mb-2">
+                                    <span class="badge badge-estado @GetEstadoBadge(item.Estado)">
+                                        @GetEstadoIcon(item.Estado) @item.Estado
+                                    </span>
+                                    @if (item.Prioridad == "Urgente" || item.Prioridad == "Alta")
+                                    {
+                                        <span class="badge bg-danger">🔥 @item.Prioridad</span>
+                                    }
+                                </div>
+                                
+                                <div class="post-actions">
+                                    <a asp-controller="Quejas" asp-action="Details" asp-route-id="@item.QuejaId" class="post-action-btn">
+                                        <i class="bi bi-chat"></i> Comentarios
+                                    </a>
+                                    <button class="post-action-btn" onclick="compartir(@item.QuejaId)">
+                                        <i class="bi bi-share"></i> Compartir
+                                    </button>
+                                    <button class="post-action-btn">
+                                        <i class="bi bi-bookmark"></i> Guardar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+        <!-- Estadísticas -->
+        <div class="sidebar-card">
+            <div class="card-header">
+                <i class="bi bi-graph-up me-2"></i> Estadísticas de la Comunidad
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">@Model.TotalQuejas</div>
+                            <div class="stat-label">Total</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stat-item">
+                            <div class="stat-number text-warning">@Model.QuejasPendientes</div>
+                            <div class="stat-label">Pendientes</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stat-item">
+                            <div class="stat-number text-info">@Model.QuejasEnProceso</div>
+                            <div class="stat-label">En Proceso</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stat-item">
+                            <div class="stat-number text-success">@Model.QuejasResueltas</div>
+                            <div class="stat-label">Resueltas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Acerca de -->
+        <div class="sidebar-card">
+            <div class="card-header">
+                <i class="bi bi-info-circle me-2"></i> Acerca de esta comunidad
+            </div>
+            <div class="card-body">
+                <p class="small text-muted">
+                    Bienvenido a <strong>Quejas y más Quejas</strong>, el espacio donde puedes expresar 
+                    tus inconformidades y conectar con otros usuarios que comparten tus experiencias.
+                </p>
+                <hr>
+                <div class="small text-muted mb-3">
+                    <i class="bi bi-calendar3 me-1"></i> Creado en 2025
+                </div>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <a asp-controller="Quejas" asp-action="Create" class="btn btn-primary w-100">
+                        Crear Publicación
+                    </a>
+                }
+                else
+                {
+                    <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary w-100 mb-2">
+                        Unirse a la comunidad
+                    </a>
+                }
+            </div>
+        </div>
+
+        <!-- Reglas -->
+        <div class="sidebar-card">
+            <div class="card-header">
+                <i class="bi bi-shield-check me-2"></i> Reglas de la Comunidad
+            </div>
+            <div class="card-body">
+                <ol class="small text-muted ps-3 mb-0">
+                    <li class="mb-2">Sé respetuoso con los demás</li>
+                    <li class="mb-2">No spam ni publicidad</li>
+                    <li class="mb-2">Quejas constructivas únicamente</li>
+                    <li class="mb-2">No información personal de terceros</li>
+                    <li>Mantén un lenguaje apropiado</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+@functions {
+    string GetCategoriaBadge(string categoria) => categoria switch
+    {
+        "Servicio" => "bg-info",
+        "Producto" => "bg-success",
+        "Atencion" => "bg-warning text-dark",
+        "Infraestructura" => "bg-danger",
+        _ => "bg-secondary"
+    };
+
+    string GetEstadoBadge(string estado) => estado switch
+    {
+        "Pendiente" => "bg-warning text-dark",
+        "En Proceso" => "bg-info",
+        "Resuelto" => "bg-success",
+        "Cerrado" => "bg-secondary",
+        _ => "bg-light text-dark"
+    };
+
+    string GetEstadoIcon(string estado) => estado switch
+    {
+        "Pendiente" => "⏳",
+        "En Proceso" => "🔄",
+        "Resuelto" => "✅",
+        "Cerrado" => "🔒",
+        _ => "📋"
+    };
+}
+
+<script>
+    function compartir(id) {
+        const url = window.location.origin + '/Quejas/Details/' + id;
+        navigator.clipboard.writeText(url).then(() => {
+            alert('¡Enlace copiado al portapapeles!');
+        });
+    }
+</script>

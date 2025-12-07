@@ -20,6 +20,7 @@ C:\Users\ccast\source\repos\AP.quejasymasquejas\AP.quejasymasquejas\AP.quejasyma
 C:\Users\ccast\source\repos\AP.quejasymasquejas\AP.quejasymasquejas\AP.quejasymasquejas.models\obj\Debug\net8.0\refint\AP.quejasymasquejas.models.dll
 C:\Users\ccast\source\repos\AP.quejasymasquejas\AP.quejasymasquejas\AP.quejasymasquejas.models\obj\Debug\net8.0\AP.quejasymasquejas.models.pdb
 C:\Users\ccast\source\repos\AP.quejasymasquejas\AP.quejasymasquejas\AP.quejasymasquejas.models\obj\Debug\net8.0\ref\AP.quejasymasquejas.models.dll
+<<<<<<< Updated upstream
 C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.models\bin\Debug\net8.0\AP.quejasymasquejas.models.deps.json
 C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.models\bin\Debug\net8.0\AP.quejasymasquejas.models.dll
 C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.models\bin\Debug\net8.0\AP.quejasymasquejas.models.pdb
@@ -32,3 +33,18 @@ C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejas
 C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.models\obj\Debug\net8.0\refint\AP.quejasymasquejas.models.dll
 C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.models\obj\Debug\net8.0\AP.quejasymasquejas.models.pdb
 C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.models\obj\Debug\net8.0\ref\AP.quejasymasquejas.models.dll
+=======
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\bin\Debug\net8.0\AP.quejasymasquejas.Models.deps.json
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\bin\Debug\net8.0\AP.quejasymasquejas.Models.dll
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\bin\Debug\net8.0\AP.quejasymasquejas.Models.pdb
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\obj\Debug\net8.0\AP.quejasymasquejas.Models.csproj.AssemblyReference.cache
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\obj\Debug\net8.0\AP.quejasymasquejas.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\obj\Debug\net8.0\AP.quejasymasquejas.Models.AssemblyInfoInputs.cache
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\obj\Debug\net8.0\AP.quejasymasquejas.Models.AssemblyInfo.cs
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\obj\Debug\net8.0\AP.quejasymasquejas.Models.csproj.CoreCompileInputs.cache
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\obj\Debug\net8.0\AP.quejasymasquejas.Models.sourcelink.json
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\obj\Debug\net8.0\AP.quejasymasquejas.Models.dll
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\obj\Debug\net8.0\refint\AP.quejasymasquejas.Models.dll
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\obj\Debug\net8.0\AP.quejasymasquejas.Models.pdb
+C:\Users\arman\Desktop\Backups\AP\Repo\ProyectoFinal_PrograAvanzada_G4\AP.quejasymasquejas.Models\obj\Debug\net8.0\ref\AP.quejasymasquejas.Models.dll
+>>>>>>> Stashed changes

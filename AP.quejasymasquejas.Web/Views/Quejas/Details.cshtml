@@ -1,0 +1,253 @@
+@model AP.quejasymasquejas.Models.DTOs.QuejaDetailDto
+
+@{
+    ViewData["Title"] = Model.Titulo;
+    var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    var isOwner = currentUserId == Model.UsuarioId;
+    var initial = Model.NombreUsuario.Substring(0, 1).ToUpper();
+}
+
+<div class="row">
+    <div class="col-lg-8">
+        <!-- Botón volver -->
+        <a asp-action="Index" class="btn btn-link text-muted ps-0 mb-3">
+            <i class="bi bi-arrow-left me-1"></i> Volver a las quejas
+        </a>
+
+        <!-- Post principal -->
+        <div class="post-card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <!-- Columna de votos -->
+                    <div class="vote-column">
+                        <button class="vote-btn" title="Votar positivo">
+                            <i class="bi bi-arrow-up-circle-fill"></i>
+                        </button>
+                        <span class="vote-count">0</span>
+                        <button class="vote-btn downvote" title="Votar negativo">
+                            <i class="bi bi-arrow-down-circle"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Contenido -->
+                    <div class="post-content-area py-3 pe-3">
+                        <!-- Meta info -->
+                        <div class="post-meta mb-2">
+                            <span class="badge badge-categoria @GetCategoriaBadge(Model.Categoria)">@Model.Categoria</span>
+                            • Publicado por 
+                            <a href="#" class="fw-bold">u/@Model.NombreUsuario</a>
+                            • @Model.FechaRegistro.ToString("dd MMM yyyy, HH:mm")
+                        </div>
+
+                        <!-- Badges -->
+                        <div class="mb-3">
+                            <span class="badge badge-estado @GetEstadoBadge(Model.Estado) me-1">
+                                @GetEstadoIcon(Model.Estado) @Model.Estado
+                            </span>
+                            <span class="badge @GetPrioridadBadge(Model.Prioridad)">
+                                @GetPrioridadIcon(Model.Prioridad) @Model.Prioridad
+                            </span>
+                        </div>
+                        
+                        <!-- Título -->
+                        <h4 class="mb-3">@Model.Titulo</h4>
+                        
+                        <!-- Contenido -->
+                        <div class="post-full-content mb-4" style="white-space: pre-wrap; line-height: 1.7;">
+                            @Model.DescripcionCompleta
+                        </div>
+                        
+                        <!-- Acciones -->
+                        <div class="post-actions border-top pt-3">
+                            <button class="post-action-btn">
+                                <i class="bi bi-chat"></i> 0 Comentarios
+                            </button>
+                            <button class="post-action-btn" onclick="compartir()">
+                                <i class="bi bi-share"></i> Compartir
+                            </button>
+                            <button class="post-action-btn">
+                                <i class="bi bi-bookmark"></i> Guardar
+                            </button>
+                            <button class="post-action-btn">
+                                <i class="bi bi-flag"></i> Reportar
+                            </button>
+                            @if (isOwner)
+                            {
+                                <a asp-action="Edit" asp-route-id="@Model.QuejaId" class="post-action-btn">
+                                    <i class="bi bi-pencil"></i> Editar
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@Model.QuejaId" class="post-action-btn text-danger">
+                                    <i class="bi bi-trash"></i> Eliminar
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de comentarios -->
+        <div class="post-card mt-3">
+            <div class="card-body p-3">
+                <h6 class="mb-3">
+                    <i class="bi bi-chat-dots me-1"></i> Comentarios
+                </h6>
+                
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <div class="mb-4">
+                        <div class="d-flex gap-2">
+                            <div class="avatar-circle">
+                                @User.Identity.Name?.Substring(0, 1).ToUpper()
+                            </div>
+                            <div class="flex-grow-1">
+                                <textarea class="form-control mb-2" rows="3" placeholder="¿Qué opinas sobre esta queja?" disabled></textarea>
+                                <button class="btn btn-reddit-blue btn-sm" disabled>
+                                    Comentar (Próximamente)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-light text-center">
+                        <a asp-area="Identity" asp-page="/Account/Login" class="text-decoration-none">Inicia sesión</a> 
+                        para dejar un comentario.
+                    </div>
+                }
+
+                <div class="text-center text-muted py-4">
+                    <i class="bi bi-chat-square-text" style="font-size: 2rem;"></i>
+                    <p class="mt-2 mb-0">Los comentarios estarán disponibles próximamente</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+        <!-- Info del autor -->
+        <div class="sidebar-card">
+            <div class="card-header">
+                <i class="bi bi-person me-2"></i> Acerca del autor
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="avatar-circle avatar-circle-lg me-3">@initial</div>
+                    <div>
+                        <div class="fw-bold">u/@Model.NombreUsuario</div>
+                        <small class="text-muted">Miembro de la comunidad</small>
+                    </div>
+                </div>
+                <button class="btn btn-outline-primary btn-sm w-100" disabled>
+                    <i class="bi bi-person-plus me-1"></i> Seguir
+                </button>
+            </div>
+        </div>
+
+        <!-- Detalles de la queja -->
+        <div class="sidebar-card">
+            <div class="card-header">
+                <i class="bi bi-info-circle me-2"></i> Detalles
+            </div>
+            <div class="card-body">
+                <div class="mb-2">
+                    <small class="text-muted">Categoría</small>
+                    <div>
+                        <span class="badge @GetCategoriaBadge(Model.Categoria)">@Model.Categoria</span>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <small class="text-muted">Prioridad</small>
+                    <div>
+                        <span class="badge @GetPrioridadBadge(Model.Prioridad)">@Model.Prioridad</span>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <small class="text-muted">Estado</small>
+                    <div>
+                        <span class="badge @GetEstadoBadge(Model.Estado)">@Model.Estado</span>
+                    </div>
+                </div>
+                <div>
+                    <small class="text-muted">Fecha de publicación</small>
+                    <div class="small">@Model.FechaRegistro.ToString("dd/MM/yyyy HH:mm")</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Acciones rápidas -->
+        @if (isOwner)
+        {
+            <div class="sidebar-card">
+                <div class="card-header">
+                    <i class="bi bi-gear me-2"></i> Tus acciones
+                </div>
+                <div class="card-body">
+                    <a asp-action="Edit" asp-route-id="@Model.QuejaId" class="btn btn-outline-warning w-100 mb-2">
+                        <i class="bi bi-pencil me-1"></i> Editar Queja
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@Model.QuejaId" class="btn btn-outline-danger w-100">
+                        <i class="bi bi-trash me-1"></i> Eliminar Queja
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@functions {
+    string GetCategoriaBadge(string cat) => cat switch
+    {
+        "Servicio" => "bg-info",
+        "Producto" => "bg-success",
+        "Atencion" => "bg-warning text-dark",
+        "Infraestructura" => "bg-danger",
+        _ => "bg-secondary"
+    };
+
+    string GetEstadoBadge(string est) => est switch
+    {
+        "Pendiente" => "bg-warning text-dark",
+        "En Proceso" => "bg-info",
+        "Resuelto" => "bg-success",
+        "Cerrado" => "bg-secondary",
+        _ => "bg-light text-dark"
+    };
+
+    string GetEstadoIcon(string est) => est switch
+    {
+        "Pendiente" => "⏳",
+        "En Proceso" => "🔄",
+        "Resuelto" => "✅",
+        "Cerrado" => "🔒",
+        _ => "📋"
+    };
+
+    string GetPrioridadBadge(string pri) => pri switch
+    {
+        "Urgente" => "bg-danger",
+        "Alta" => "bg-warning text-dark",
+        "Normal" => "bg-secondary",
+        "Baja" => "bg-light text-dark",
+        _ => "bg-secondary"
+    };
+
+    string GetPrioridadIcon(string pri) => pri switch
+    {
+        "Urgente" => "🔥",
+        "Alta" => "⚠️",
+        "Normal" => "📋",
+        "Baja" => "📝",
+        _ => "📋"
+    };
+}
+
+<script>
+    function compartir() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('¡Enlace copiado al portapapeles!');
+        });
+    }
+</script>

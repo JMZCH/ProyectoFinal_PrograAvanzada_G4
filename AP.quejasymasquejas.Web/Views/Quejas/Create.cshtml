@@ -1,0 +1,125 @@
+@model AP.quejasymasquejas.Models.DTOs.QuejaCreateDto
+
+@{
+    ViewData["Title"] = "Crear Queja";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <a asp-action="Index" class="btn btn-link text-muted ps-0 mb-3">
+            <i class="bi bi-arrow-left me-1"></i> Volver a las quejas
+        </a>
+
+        <div class="form-card">
+            <div class="card-header">
+                <i class="bi bi-pencil-square me-2"></i> Crear una nueva queja
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <!-- Tabs simulados -->
+                    <div class="border-bottom mb-4 pb-2">
+                        <button type="button" class="btn btn-link text-decoration-none active px-3">
+                            <i class="bi bi-card-text me-1"></i> Post
+                        </button>
+                        <button type="button" class="btn btn-link text-decoration-none text-muted px-3" disabled>
+                            <i class="bi bi-image me-1"></i> Imagen
+                        </button>
+                        <button type="button" class="btn btn-link text-decoration-none text-muted px-3" disabled>
+                            <i class="bi bi-link-45deg me-1"></i> Link
+                        </button>
+                    </div>
+
+                    <!-- Título -->
+                    <div class="mb-4">
+                        <input asp-for="Titulo" class="form-control form-control-lg" 
+                               placeholder="Título de tu queja" maxlength="200" />
+                        <span asp-validation-for="Titulo" class="text-danger small"></span>
+                        <div class="d-flex justify-content-between mt-1">
+                            <small class="text-muted">Sé claro y conciso</small>
+                            <small class="text-muted"><span id="charCount">0</span>/200</small>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <div class="mb-4">
+                        <textarea asp-for="Descripcion" class="form-control" rows="8" 
+                                  placeholder="Describe tu queja con detalle. ¿Qué pasó? ¿Cuándo? ¿Cómo te afectó?"></textarea>
+                        <span asp-validation-for="Descripcion" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Categoría y Prioridad -->
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label class="form-label small text-muted">
+                                <i class="bi bi-tag me-1"></i> Categoría
+                            </label>
+                            <select asp-for="Categoria" class="form-select">
+                                <option value="General">🏷️ General</option>
+                                <option value="Servicio">🛠️ Servicio</option>
+                                <option value="Producto">📦 Producto</option>
+                                <option value="Atencion">👥 Atención al Cliente</option>
+                                <option value="Infraestructura">🏗️ Infraestructura</option>
+                                <option value="Otro">📋 Otro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small text-muted">
+                                <i class="bi bi-exclamation-triangle me-1"></i> Prioridad
+                            </label>
+                            <select asp-for="Prioridad" class="form-select">
+                                <option value="Baja">📝 Baja - No es urgente</option>
+                                <option value="Normal" selected>📋 Normal - Estándar</option>
+                                <option value="Alta">⚠️ Alta - Necesita atención</option>
+                                <option value="Urgente">🔥 Urgente - Crítico</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Botones -->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="sendNotifications" checked disabled>
+                            <label class="form-check-label small text-muted" for="sendNotifications">
+                                Recibir notificaciones de respuestas
+                            </label>
+                        </div>
+                        <div>
+                            <a asp-action="Index" class="btn btn-outline-secondary me-2">
+                                Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-reddit-blue">
+                                <i class="bi bi-send me-1"></i> Publicar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="card mt-3 border-0 bg-light">
+            <div class="card-body small text-muted">
+                <strong><i class="bi bi-lightbulb me-1"></i> Consejos para una buena queja:</strong>
+                <ul class="mb-0 mt-2">
+                    <li>Sé específico sobre el problema</li>
+                    <li>Incluye fechas y detalles relevantes</li>
+                    <li>Mantén un tono respetuoso</li>
+                    <li>Sugiere posibles soluciones</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById('Titulo').addEventListener('input', function() {
+            document.getElementById('charCount').textContent = this.value.length;
+        });
+    </script>
+}

@@ -1,0 +1,88 @@
+@model AP.quejasymasquejas.Models.DTOs.QuejaDetailDto
+
+@{
+    ViewData["Title"] = "Eliminar Queja";
+    var initial = Model.NombreUsuario.Substring(0, 1).ToUpper();
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <a asp-action="Index" class="btn btn-link text-muted ps-0 mb-3">
+            <i class="bi bi-arrow-left me-1"></i> Volver a las quejas
+        </a>
+
+        <!-- Alerta -->
+        <div class="alert alert-danger d-flex align-items-center mb-4">
+            <i class="bi bi-exclamation-triangle-fill me-3" style="font-size: 1.5rem;"></i>
+            <div>
+                <strong>¿Estás seguro que deseas eliminar esta queja?</strong>
+                <p class="mb-0 small">Esta acción es permanente y no se puede deshacer.</p>
+            </div>
+        </div>
+
+        <!-- Preview del post -->
+        <div class="post-card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <!-- Columna de votos (deshabilitada) -->
+                    <div class="vote-column" style="opacity: 0.5;">
+                        <button class="vote-btn" disabled>
+                            <i class="bi bi-arrow-up-circle"></i>
+                        </button>
+                        <span class="vote-count">0</span>
+                        <button class="vote-btn" disabled>
+                            <i class="bi bi-arrow-down-circle"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Contenido -->
+                    <div class="post-content-area py-3 pe-3">
+                        <div class="post-meta mb-2">
+                            <span class="badge bg-secondary">@Model.Categoria</span>
+                            • Publicado por <span class="fw-bold">u/@Model.NombreUsuario</span>
+                            • @Model.FechaRegistro.ToString("dd MMM yyyy")
+                        </div>
+                        
+                        <h5 class="mb-2" style="text-decoration: line-through; opacity: 0.7;">
+                            @Model.Titulo
+                        </h5>
+                        
+                        <p class="text-muted small" style="opacity: 0.7;">
+                            @(Model.Descripcion.Length > 200 ? Model.Descripcion.Substring(0, 200) + "..." : Model.Descripcion)
+                        </p>
+                        
+                        <div class="d-flex gap-2">
+                            <span class="badge bg-secondary">@Model.Estado</span>
+                            <span class="badge bg-secondary">@Model.Prioridad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirmación -->
+        <div class="card mt-4 border-danger">
+            <div class="card-body">
+                <h6 class="text-danger mb-3">
+                    <i class="bi bi-shield-exclamation me-1"></i> Confirmar eliminación
+                </h6>
+                <p class="text-muted small mb-4">
+                    Al eliminar esta queja, también se eliminarán todos los comentarios y votos asociados.
+                    Si solo quieres ocultar la queja, considera cambiar su estado a "Cerrado".
+                </p>
+                
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@Model.QuejaId" />
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            <i class="bi bi-x-lg me-1"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-trash me-1"></i> Sí, eliminar permanentemente
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
