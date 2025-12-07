@@ -1,0 +1,252 @@
+@model IEnumerable<AP.quejasymasquejas.Models.DTOs.QuejaListDto>
+
+@{
+    ViewData["Title"] = "Quejas";
+    var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="bi bi-check-circle me-2"></i>@TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<div class="row">
+    <!-- Columna Principal -->
+    <div class="col-lg-8">
+        <!-- Header con filtros -->
+        <div class="post-card mb-3">
+            <div class="card-body p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-secondary active">
+                            <i class="bi bi-fire"></i> Recientes
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-graph-up"></i> Top
+                        </button>
+                    </div>
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a asp-action="Create" class="btn btn-reddit-blue btn-sm">
+                            <i class="bi bi-plus-lg me-1"></i> Nueva Queja
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+
+        @if (!Model.Any())
+        {
+            <div class="post-card">
+                <div class="empty-state">
+                    <div class="empty-state-icon">😶</div>
+                    <h5>No hay quejas todavía</h5>
+                    <p>¡Sé el primero en quejarte!</p>
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a asp-action="Create" class="btn btn-reddit">Crear Primera Queja</a>
+                    }
+                    else
+                    {
+                        <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-reddit-blue">
+                            Inicia sesión para quejarte
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                var isOwner = currentUserId == item.UsuarioId;
+                var tiempoTranscurrido = GetTiempoTranscurrido(item.FechaRegistro);
+
+                <div class="post-card">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <!-- Columna de votos -->
+                            <div class="vote-column">
+                                <button class="vote-btn" title="Votar positivo">
+                                    <i class="bi bi-arrow-up-circle"></i>
+                                </button>
+                                <span class="vote-count">0</span>
+                                <button class="vote-btn downvote" title="Votar negativo">
+                                    <i class="bi bi-arrow-down-circle"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Contenido -->
+                            <div class="post-content-area">
+                                <div class="post-meta">
+                                    <span class="badge badge-categoria @GetCategoriaBadge(item.Categoria)">@item.Categoria</span>
+                                    • Publicado por <a href="#">u/@item.NombreUsuario</a>
+                                    • @tiempoTranscurrido
+                                    @if (item.Prioridad == "Urgente")
+                                    {
+                                        <span class="badge bg-danger ms-1">🔥 Urgente</span>
+                                    }
+                                    else if (item.Prioridad == "Alta")
+                                    {
+                                        <span class="badge bg-warning text-dark ms-1">⚠️ Alta</span>
+                                    }
+                                </div>
+                                
+                                <a asp-action="Details" asp-route-id="@item.QuejaId" class="text-decoration-none">
+                                    <h5 class="post-title">@item.Titulo</h5>
+                                </a>
+                                
+                                <p class="post-preview">@item.Descripcion</p>
+                                
+                                <div class="mb-2">
+                                    <span class="badge badge-estado @GetEstadoBadge(item.Estado)">
+                                        @GetEstadoIcon(item.Estado) @item.Estado
+                                    </span>
+                                </div>
+                                
+                                <div class="post-actions">
+                                    <a asp-action="Details" asp-route-id="@item.QuejaId" class="post-action-btn">
+                                        <i class="bi bi-chat"></i> Comentarios
+                                    </a>
+                                    <button class="post-action-btn" onclick="compartir(@item.QuejaId)">
+                                        <i class="bi bi-share"></i> Compartir
+                                    </button>
+                                    <button class="post-action-btn">
+                                        <i class="bi bi-bookmark"></i> Guardar
+                                    </button>
+                                    @if (isOwner)
+                                    {
+                                        <a asp-action="Edit" asp-route-id="@item.QuejaId" class="post-action-btn">
+                                            <i class="bi bi-pencil"></i> Editar
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.QuejaId" class="post-action-btn text-danger">
+                                            <i class="bi bi-trash"></i> Eliminar
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+        <!-- Crear Post -->
+        <div class="sidebar-card">
+            <div class="card-header">
+                <i class="bi bi-megaphone me-2"></i> Quejas y más Quejas
+            </div>
+            <div class="card-body">
+                <p class="small text-muted">
+                    Comparte tus quejas con la comunidad. Tu voz importa.
+                </p>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <a asp-action="Create" class="btn btn-primary w-100">
+                        <i class="bi bi-plus-lg me-1"></i> Crear Queja
+                    </a>
+                }
+                else
+                {
+                    <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary w-100 mb-2">
+                        Únete a la comunidad
+                    </a>
+                    <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-primary w-100">
+                        Ya tengo cuenta
+                    </a>
+                }
+            </div>
+        </div>
+
+        <!-- Filtrar por categoría -->
+        <div class="sidebar-card">
+            <div class="card-header">
+                <i class="bi bi-funnel me-2"></i> Categorías
+            </div>
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-secondary" style="cursor:pointer;">General</span>
+                    <span class="badge bg-info" style="cursor:pointer;">Servicio</span>
+                    <span class="badge bg-success" style="cursor:pointer;">Producto</span>
+                    <span class="badge bg-warning text-dark" style="cursor:pointer;">Atención</span>
+                    <span class="badge bg-danger" style="cursor:pointer;">Infraestructura</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="sidebar-card">
+            <div class="card-header">
+                <i class="bi bi-bar-chart me-2"></i> Resumen
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Total de quejas:</span>
+                    <strong>@Model.Count()</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Pendientes:</span>
+                    <strong class="text-warning">@Model.Count(q => q.Estado == "Pendiente")</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span class="text-muted">Resueltas:</span>
+                    <strong class="text-success">@Model.Count(q => q.Estado == "Resuelto")</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@functions {
+    string GetTiempoTranscurrido(DateTime fecha)
+    {
+        var diferencia = DateTime.Now - fecha;
+        if (diferencia.TotalMinutes < 1) return "ahora mismo";
+        if (diferencia.TotalMinutes < 60) return $"hace {(int)diferencia.TotalMinutes} min";
+        if (diferencia.TotalHours < 24) return $"hace {(int)diferencia.TotalHours}h";
+        if (diferencia.TotalDays < 7) return $"hace {(int)diferencia.TotalDays}d";
+        return fecha.ToString("dd MMM");
+    }
+
+    string GetCategoriaBadge(string categoria) => categoria switch
+    {
+        "Servicio" => "bg-info",
+        "Producto" => "bg-success",
+        "Atencion" => "bg-warning text-dark",
+        "Infraestructura" => "bg-danger",
+        _ => "bg-secondary"
+    };
+
+    string GetEstadoBadge(string estado) => estado switch
+    {
+        "Pendiente" => "bg-warning text-dark",
+        "En Proceso" => "bg-info",
+        "Resuelto" => "bg-success",
+        "Cerrado" => "bg-secondary",
+        _ => "bg-light text-dark"
+    };
+
+    string GetEstadoIcon(string estado) => estado switch
+    {
+        "Pendiente" => "⏳",
+        "En Proceso" => "🔄",
+        "Resuelto" => "✅",
+        "Cerrado" => "🔒",
+        _ => "📋"
+    };
+}
+
+<script>
+    function compartir(id) {
+        const url = window.location.origin + '/Quejas/Details/' + id;
+        navigator.clipboard.writeText(url).then(() => {
+            alert('¡Enlace copiado al portapapeles!');
+        });
+    }
+</script>

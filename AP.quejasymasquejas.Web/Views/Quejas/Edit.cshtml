@@ -1,0 +1,103 @@
+@model AP.quejasymasquejas.Models.DTOs.QuejaEditDto
+
+@{
+    ViewData["Title"] = "Editar Queja";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <a asp-action="Index" class="btn btn-link text-muted ps-0 mb-3">
+            <i class="bi bi-arrow-left me-1"></i> Volver a las quejas
+        </a>
+
+        <div class="form-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #f39c12, #e74c3c);">
+                <i class="bi bi-pencil me-2"></i> Editar queja
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                    <input type="hidden" asp-for="QuejaId" />
+
+                    <!-- Título -->
+                    <div class="mb-4">
+                        <label class="form-label small text-muted">
+                            <i class="bi bi-type-h1 me-1"></i> Título
+                        </label>
+                        <input asp-for="Titulo" class="form-control form-control-lg" maxlength="200" />
+                        <span asp-validation-for="Titulo" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Descripción -->
+                    <div class="mb-4">
+                        <label class="form-label small text-muted">
+                            <i class="bi bi-text-paragraph me-1"></i> Descripción
+                        </label>
+                        <textarea asp-for="Descripcion" class="form-control" rows="8"></textarea>
+                        <span asp-validation-for="Descripcion" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Categoría, Prioridad y Estado -->
+                    <div class="row mb-4">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label class="form-label small text-muted">
+                                <i class="bi bi-tag me-1"></i> Categoría
+                            </label>
+                            <select asp-for="Categoria" class="form-select">
+                                <option value="General">🏷️ General</option>
+                                <option value="Servicio">🛠️ Servicio</option>
+                                <option value="Producto">📦 Producto</option>
+                                <option value="Atencion">👥 Atención</option>
+                                <option value="Infraestructura">🏗️ Infraestructura</option>
+                                <option value="Otro">📋 Otro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label class="form-label small text-muted">
+                                <i class="bi bi-exclamation-triangle me-1"></i> Prioridad
+                            </label>
+                            <select asp-for="Prioridad" class="form-select">
+                                <option value="Baja">📝 Baja</option>
+                                <option value="Normal">📋 Normal</option>
+                                <option value="Alta">⚠️ Alta</option>
+                                <option value="Urgente">🔥 Urgente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small text-muted">
+                                <i class="bi bi-flag me-1"></i> Estado
+                            </label>
+                            <select asp-for="Estado" class="form-select">
+                                <option value="Pendiente">⏳ Pendiente</option>
+                                <option value="En Proceso">🔄 En Proceso</option>
+                                <option value="Resuelto">✅ Resuelto</option>
+                                <option value="Cerrado">🔒 Cerrado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Botones -->
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Delete" asp-route-id="@Model.QuejaId" class="btn btn-outline-danger">
+                            <i class="bi bi-trash me-1"></i> Eliminar
+                        </a>
+                        <div>
+                            <a asp-action="Index" class="btn btn-outline-secondary me-2">
+                                Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-warning">
+                                <i class="bi bi-check-lg me-1"></i> Guardar Cambios
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

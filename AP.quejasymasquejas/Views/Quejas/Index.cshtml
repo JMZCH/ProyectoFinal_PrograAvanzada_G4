@@ -1,0 +1,240 @@
+﻿@model IEnumerable<AP.quejasymasquejas.Models.Queja>
+
+@{
+    ViewData["Title"] = "Quejas";
+}
+
+<div class="container-fluid px-4">
+    <div class="row">
+        <!-- Columna principal de posts -->
+        <div class="col-lg-8">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="text-muted mb-0">📢 Últimas Quejas</h4>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <a asp-action="Create" class="btn btn-primary rounded-pill">
+                        ➕ Nueva Queja
+                    </a>
+                }
+            </div>
+
+            @if (!Model.Any())
+            {
+                <div class="card bg-light border-0 shadow-sm">
+                    <div class="card-body text-center py-5">
+                        <h1>😶</h1>
+                        <h5 class="text-muted">No hay quejas todavía</h5>
+                        <p class="text-muted">¡Sé el primero en quejarte!</p>
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <a asp-action="Create" class="btn btn-primary">Crear Primera Queja</a>
+                        }
+                        else
+                        {
+                            <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-primary">
+                                Inicia sesión para quejarte
+                            </a>
+                        }
+                    </div>
+                </div>
+            }
+            else
+            {
+                @foreach (var item in Model)
+                {
+                    var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                    var isOwner = currentUserId == item.UsuarioId;
+                    var autorNombre = item.Usuario?.UserName?.Split('@')[0] ?? "Anónimo";
+                    var tiempoTranscurrido = GetTiempoTranscurrido(item.FechaRegistro);
+
+                    <div class="card mb-3 shadow-sm post-card">
+                        <div class="card-body">
+                            <!-- Header del post -->
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="avatar-circle me-2">
+                                    @autorNombre.Substring(0, 1).ToUpper()
+                                </div>
+                                <div class="post-meta">
+                                    <span class="fw-bold text-primary">@autorNombre</span>
+                                    <span class="text-muted">• @tiempoTranscurrido</span>
+                                </div>
+                                <div class="ms-auto">
+                                    <span class="badge rounded-pill @GetCategoriaBadgeClass(item.Categoria)">
+                                        @item.Categoria
+                                    </span>
+                                    @if (item.Prioridad == "Urgente" || item.Prioridad == "Alta")
+                                    {
+                                        <span class="badge rounded-pill @(item.Prioridad == "Urgente" ? "bg-danger" : "bg-warning text-dark")">
+                                            🔥 @item.Prioridad
+                                        </span>
+                                    }
+                                </div>
+                            </div>
+
+                            <!-- Título del post -->
+                            <a asp-action="Details" asp-route-id="@item.QuejaID" class="text-decoration-none">
+                                <h5 class="card-title post-title mb-2">@item.Titulo</h5>
+                            </a>
+
+                            <!-- Descripción (preview) -->
+                            <p class="card-text text-muted post-preview">
+                                @(item.Descripcion.Length > 200 ? item.Descripcion.Substring(0, 200) + "..." : item.Descripcion)
+                            </p>
+
+                            <!-- Estado -->
+                            <div class="mb-3">
+                                <span class="badge @GetEstadoBadgeClass(item.Estado)">
+                                    @GetEstadoIcon(item.Estado) @item.Estado
+                                </span>
+                            </div>
+
+                            <!-- Footer del post - Acciones -->
+                            <div class="post-actions d-flex align-items-center">
+                                <a asp-action="Details" asp-route-id="@item.QuejaID" class="btn btn-sm btn-light me-2">
+                                    💬 Comentarios
+                                </a>
+                                <button class="btn btn-sm btn-light me-2" onclick="compartir('@item.QuejaID')">
+                                    🔗 Compartir
+                                </button>
+                                @if (isOwner)
+                                {
+                                    <a asp-action="Edit" asp-route-id="@item.QuejaID" class="btn btn-sm btn-outline-secondary me-2">
+                                        ✏️ Editar
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.QuejaID" class="btn btn-sm btn-outline-danger">
+                                        🗑️ Eliminar
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <!-- Card de bienvenida -->
+            <div class="card shadow-sm mb-3">
+                <div class="card-header bg-primary text-white">
+                    <h6 class="mb-0">😤 Quejas y más Quejas</h6>
+                </div>
+                <div class="card-body">
+                    <p class="small text-muted">
+                        Bienvenido a la comunidad donde tu voz importa.
+                        Comparte tus quejas, desahógate y conecta con otros.
+                    </p>
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a asp-action="Create" class="btn btn-primary w-100">
+                            ➕ Crear Queja
+                        </a>
+                    }
+                    else
+                    {
+                        <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary w-100 mb-2">
+                            Únete a la comunidad
+                        </a>
+                        <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-primary w-100">
+                            Ya tengo cuenta
+                        </a>
+                    }
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="card shadow-sm mb-3">
+                <div class="card-header">
+                    <h6 class="mb-0">🏷️ Categorías</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-secondary filter-badge">General</span>
+                        <span class="badge bg-info filter-badge">Servicio</span>
+                        <span class="badge bg-success filter-badge">Producto</span>
+                        <span class="badge bg-warning text-dark filter-badge">Atención</span>
+                        <span class="badge bg-danger filter-badge">Infraestructura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h6 class="mb-0">📊 Estadísticas</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">Total de quejas:</span>
+                        <span class="fw-bold">@Model.Count()</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">Pendientes:</span>
+                        <span class="fw-bold text-warning">@Model.Count(q => q.Estado == "Pendiente")</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span class="text-muted">Resueltas:</span>
+                        <span class="fw-bold text-success">@Model.Count(q => q.Estado == "Resuelto")</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@functions {
+    string GetTiempoTranscurrido(DateTime fecha)
+    {
+        var diferencia = DateTime.Now - fecha;
+        if (diferencia.TotalMinutes < 1) return "ahora mismo";
+        if (diferencia.TotalMinutes < 60) return $"hace {(int)diferencia.TotalMinutes} min";
+        if (diferencia.TotalHours < 24) return $"hace {(int)diferencia.TotalHours} h";
+        if (diferencia.TotalDays < 7) return $"hace {(int)diferencia.TotalDays} días";
+        return fecha.ToString("dd MMM yyyy");
+    }
+
+    string GetCategoriaBadgeClass(string categoria)
+    {
+        return categoria switch
+        {
+            "Servicio" => "bg-info",
+            "Producto" => "bg-success",
+            "Atención" => "bg-warning text-dark",
+            "Infraestructura" => "bg-danger",
+            _ => "bg-secondary"
+        };
+    }
+
+    string GetEstadoBadgeClass(string estado)
+    {
+        return estado switch
+        {
+            "Pendiente" => "bg-warning text-dark",
+            "En Proceso" => "bg-info",
+            "Resuelto" => "bg-success",
+            "Cerrado" => "bg-secondary",
+            _ => "bg-light text-dark"
+        };
+    }
+
+    string GetEstadoIcon(string estado)
+    {
+        return estado switch
+        {
+            "Pendiente" => "⏳",
+            "En Proceso" => "🔄",
+            "Resuelto" => "✅",
+            "Cerrado" => "🔒",
+            _ => "📋"
+        };
+    }
+}
+
+<script>
+    function compartir(id) {
+        const url = window.location.origin + '/Quejas/Details/' + id;
+        navigator.clipboard.writeText(url).then(() => {
+            alert('¡Enlace copiado al portapapeles!');
+        });
+    }
+</script>

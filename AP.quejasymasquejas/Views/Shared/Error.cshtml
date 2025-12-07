@@ -1,0 +1,21 @@
+﻿@model AP.quejasymasquejas.Models.ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div class="text-center py-5">
+    <h1 class="display-1">😵</h1>
+    <h2 class="text-danger">¡Oops! Algo salió mal</h2>
+    <p class="text-muted">Ocurrió un error al procesar tu solicitud.</p>
+
+    @if (Model?.ShowRequestId ?? false)
+    {
+        <p class="small">
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }
+
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-3">
+        🏠 Volver al inicio
+    </a>
+</div>

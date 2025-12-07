@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>AP.quejasymasquejas.Business</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AP.quejasymasquejas.Data\AP.quejasymasquejas.Data.csproj" />
+    <ProjectReference Include="..\AP.quejasymasquejas.Models\AP.quejasymasquejas.Models.csproj" />
+  </ItemGroup>
+
+</Project>
